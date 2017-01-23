@@ -4,36 +4,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace generic_class
+namespace ConsoleApplication4
 {
+
     class Program
     {
-        class mycollection<T>
+        delegate string Assignments(string answer);
+        public string Check(string x)
         {
-            private int Length;
-            public mycollection(int Lenght)
+            string ans = "no";
+            while (ans != "Yes")
             {
-                this.Length = Length;
+                Console.ReadLine();
             }
-            public string this [int length]
-            {
-                
-                get
-                    {
-                    int count2, index;
-                    if (index >= 0 && index <= size - 1)
-                    {
-                        count2 = namelist[index];
-
-                        return count2;
-                    }
-                }
-            }
-            
-            
+            return "yes";
         }
         static void Main(string[] args)
         {
+            Assignments num1 = new Assignments(Check());
+            num1("yes");
         }
     }
 }
