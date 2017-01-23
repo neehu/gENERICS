@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication4
 {
+    delegate string Assignments(string answer);
 
     class Program
     {
-        delegate string Assignments(string answer);
-        public string Check(string x)
+        event Assignments status;
+                public string Check(string x)
         {
+            
             string ans = "no";
             while (ans != "Yes")
             {
@@ -21,8 +23,10 @@ namespace ConsoleApplication4
         }
         static void Main(string[] args)
         {
-            Assignments num1 = new Assignments(Check());
-            num1("yes");
+            Program obj1 = new Program();
+            string result = obj1.status("yes");
+            Console.WriteLine(result);
+            
         }
     }
 }
